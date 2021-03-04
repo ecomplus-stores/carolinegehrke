@@ -1,23 +1,23 @@
 {
-  "store_id": 1229,
-  "name": "carolinegehrke",
-  "domain": "carolinegehrke.netlify.app",
-  "short_name": "carolinegehrke",
-  "description": "carolinegehrke",
-  "primary_color": "#222831",
-  "secondary_color": "#393e46",
-  "bg_color": "#ffffff",
+  "domain": "lola-b.com",
+  "currency_symbol": "R$",
+  "primary_color": "#bc755c",
   "theme": {
-    "bootswatch": "_",
+    "bootswatch": "cerulean",
     "custom": "_"
   },
+  "bg_color": "#f4f4f4",
   "logo": "/img/uploads/logo.png",
-  "mini_logo": "",
-  "icon": "/img/icon.png",
-  "large_icon": "/img/large-icon.png",
-  "favicon": "/img/uploads/favicon.png",
+  "name": "Lola B",
+  "short_name": "carolinegehrke",
   "lang": "pt_br",
   "currency": "BRL",
-  "currency_symbol": "R$",
-  "country_code": "BR"
+  "mini_logo": "",
+  "favicon": "/img/uploads/favicon.png",
+  "country_code": "BR",
+  "secondary_color": "#2d2d2d",
+  "icon": "/img/icon.png",
+  "store_id": 1229,
+  "description": "carolinegehrke",
+  "large_icon": "/img/large-icon.png"
 }
