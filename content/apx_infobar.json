@@ -1,0 +1,27 @@
+{
+  "stripe_color": "#f7f7f7",
+  "text_color": "#212121",
+  "container": "Caixa",
+  "list": [
+    {
+      "icon": "/img/uploads/black-shop-tag.png",
+      "title": "50% de desconto",
+      "text": "no atacado"
+    },
+    {
+      "title": "Entrega Garantida",
+      "text": "em todo o Brasil",
+      "icon": "/img/uploads/grupo-150.png"
+    },
+    {
+      "title": "Compra 100% Segura",
+      "text": "seus dados protegidos",
+      "icon": "/img/uploads/lock.png"
+    },
+    {
+      "title": "Troca Grátis",
+      "text": "30 dias para troca",
+      "icon": "/img/uploads/cycle-couple-of-arrows-hand-drawn-lines.png"
+    }
+  ]
+}
