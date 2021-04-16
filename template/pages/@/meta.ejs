@@ -126,3 +126,11 @@ if (pathname) {
 
 <meta name="ecom-store-id" content="<%= _.storeId %>">
 <meta name="views-v" content="1.3.0">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script>
+<%-
+  `window.apx_product_list=${JSON.stringify(_.cms('apx_product_list') || {})};`
+%>
+</script>

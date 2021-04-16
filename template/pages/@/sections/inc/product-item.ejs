@@ -7,6 +7,7 @@ if (Array.isArray(_.itemDataFields)) {
 itemDataFields.forEach(field => itemData[field] = opt.item[field])
 itemData.name = _.ecomUtils.name(opt.item)
 itemData.price = _.ecomUtils.price(opt.item)
+itemData.variants = opt.item.variations
 
 const imgObj = _.ecomUtils.img(opt.item)
 if (imgObj) {
@@ -17,7 +18,8 @@ if (imgObj) {
 }
 %>
 
-<article class="product-item" data-product="<%= JSON.stringify(itemData) %>">
+<article class="product-item" data-product="<%= JSON.stringify(itemData) %>" variants="<%= JSON.stringify(itemData.variants) %>" >
+
   <div
     class="product-card"
     data-product-id="<%= itemData._id %>"

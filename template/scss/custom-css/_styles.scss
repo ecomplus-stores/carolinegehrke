@@ -1,1 +1,117 @@
-// Add your custom CSS here.
+:root{
+    --apx_product_list_height  : 300px;
+}
+body{font-family:Montserrat;}
+.header__nav{text-align:left;}
+
+.top-bar__countdown{
+    font-size:16px;
+    font-weight:500;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    padding:1.1rem;
+}
+
+.header{
+    background:#bc755c;
+    box-shadow: none;
+    border: 0;
+    padding: 1.6rem 0;
+}
+.header__row{align-items:flex-end}
+.header__nav a{
+    color:#fff;
+    font-size: 16px;
+    text-transform: initial;
+    margin-right: 2.5rem;
+    letter-spacing: 1px;
+}
+.header__nav a:hover{background:transparent;}
+.header .svg-ico svg{height:30px;width:auto;}
+.header__buttons .btn{padding:0;margin-left:3rem;}
+.header__buttons #cart-button{position:relative;}
+.header__buttons #cart-button #cart-count{
+    background: transparent;
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 4px;
+    width: 100%;
+    text-align: center;
+    font-size: .7rem;
+}
+
+#page-home .sections .responsive-baner:first-child{margin-top:0;}
+#page-home .sections .banners-grid:nth-child(2){margin-top:2rem;}
+#page-home .sections .responsive-baner:first-child .container-fluid{padding:0;}
+#page-home .sections .banners-grid:nth-child(2) .container-fluid{padding:0;}
+
+.sections .container,
+.products-carousel{
+    max-width: 90%;
+    padding-left: 0;
+    padding-right: 0;
+}
+.products-carousel__title{padding:0;}
+.products-carousel__title:before{display:none;}
+.apx-title{
+    font-size:24px;
+    letter-spacing:4px;
+    font-weight:normal;
+    color:#212121;
+    text-align:center;
+    display:block;
+    margin-bottom:2.5rem;
+    margin-top:4rem;
+
+}
+.apx-title small{
+    font-size:12px;
+    letter-spacing:1px;
+    display:block;
+    margin-bottom:15px;
+}
+.product-card__picture img,
+.product-card__pictures{
+    height: var(--apx_product_list_height);
+    max-height: var(--apx_product_list_height);
+}
+.product-card a,
+.product-card:hover a{text-decoration:none;}
+.product-card,
+.product-card:hover{padding:0;box-shadow:unset;}
+.product-card__pictures{margin-bottom:1rem;}
+.product-card__name{font-size:14px;height:auto;}
+.product-card .product-card__buy{display:none!important;}
+.prices__compare{margin-right:.2rem;color:#868686;letter-spacing:2px;}
+.prices__value{display:inline-block;font-size:16px;letter-spacing:2px;}
+.product-card__offer-stamp{    
+    background-color: #212121;
+    top: 5px;
+    right: 5px;
+}
+.product-card__offer-stamp i, .product-card__offer-stamp svg{opacity:1}
+
+//instagram
+.apx_instafeed{margin-bottom:5rem;}
+.apx_instafeed a{position:relative;display:block;}
+.apx_instafeed a:hover img{opacity:.5}
+.apx_instafeed a img{max-width:100%;transition:all .2s;}
+.apx_instafeed a:hover span{opacity:1}
+.apx_instafeed a span{
+    padding: 2rem;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 80%;
+    box-shadow: 0px 0px 30px rgba(0,0,0,.2);
+    opacity:0;    
+    transition:all .2s;
+}
+

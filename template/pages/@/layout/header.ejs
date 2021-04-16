@@ -70,63 +70,12 @@ if (header.categories_list) {
       <% } %>
     <% } %>
   <% } %>
-
-  <div class="top-bar__nav d-none d-md-block">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <nav class="top-bar__page-links">
-            <% if (header.contacts_stripe.pages) { %>
-              <% header.contacts_stripe.pages.forEach(({ link, title }) => { %>
-                <a href="<%= link %>"><%= title %></a>
-              <% }) %>
-            <% } %>
-          </nav>
-          <% if (header.contacts_stripe.phone_wpp) { %>
-            <% if (contacts.whatsapp) { %>
-              <a
-                href="javascript:;"
-                target="_blank"
-                rel="noopener"
-                class="whatsapp-link"
-                data-tel="<%= contacts.whatsapp.replace(/\D/g, '') %>"
-              >
-                <i class="fab fa-whatsapp"></i>
-                <%= contacts.whatsapp %>
-              </a>
-            <% } %>
-            <% if (contacts.phone) { %>
-              <a
-                href="tel:+<%= contacts.phone.replace(/\D/g, '') %>"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fas fa-phone"></i>
-                <%= contacts.phone %>
-              </a>
-            <% } %>
-          <% } %>
-        </div>
-        <% if (header.contacts_stripe.socials) { %>
-          <div class="col-auto">
-            <% networks.forEach(network => { %>
-              <% if (contacts[network]) { %>
-                <a href="<%= contacts[network] %>" target="_blank" rel="noopener">
-                  <i class="fab fa-<%= network %>"></i>
-                </a>
-              <% } %>
-            <% }) %>
-          </div>
-        <% } %>
-      </div>
-    </div>
-  </div>
 </div>
 
 <header class="header" id="header">
   <div class="header__container container-fluid">
     <div class="header__row row">
-      <div class="col-auto p-0">
+      <div class="col-auto p-0 d-none">
         <button
           class="btn header__toggler"
           type="button"
@@ -144,16 +93,7 @@ if (header.categories_list) {
 
       <div class="col col-lg-auto pl-1 pl-md-2 pl-lg-3">
         <a href="/">
-          <% if (logo && logo.url) { %>
-            <img
-              id="logo"
-              class="header__logo"
-              src="<%= logo.url %>"
-              alt="<%= logo.alt %>"
-            >
-          <% } else { %>
-            <%= _.settings.name || _.store.name %>
-          <% } %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="164.6" height="60.203" viewBox="0 0 164.6 60.203"> <g id="Grupo_149" data-name="Grupo 149" transform="translate(-154.165 -329.716)"> <g id="Grupo_148" data-name="Grupo 148" transform="translate(154.165 329.716)"> <path id="Caminho_160" data-name="Caminho 160" d="M217.811,373.229c-11.719,0-20.555,9.185-20.555,21.366,0,12.222,8.836,21.438,20.555,21.438,11.76,0,20.629-9.217,20.629-21.438C238.44,382.414,229.571,373.229,217.811,373.229Zm8.162,35.223a9.889,9.889,0,0,1-7.131,3.537c-5.93,0-12.83-6.54-13.638-17.112-.443-5.321,1.025-10.245,4.03-13.511a10.389,10.389,0,0,1,7.619-3.573c7.177,0,12.6,6.642,13.492,16.522A18.539,18.539,0,0,1,225.973,408.452Z" transform="translate(-180.027 -355.831)" fill="#fff"/> <path id="Caminho_161" data-name="Caminho 161" d="M443.829,459.292a3.972,3.972,0,0,0-4.05,3.977,3.976,3.976,0,0,0,7.952,0A3.944,3.944,0,0,0,443.829,459.292Z" transform="translate(-325.58 -407.483)" fill="#fff"/> <path id="Caminho_162" data-name="Caminho 162" d="M380.582,414.485a2.359,2.359,0,0,0-.556-.319,3.442,3.442,0,0,1-2.491-3.579c0-4.491,0-9.638,0-14.129q0-3.493,0-6.986c0-3.2.436-5.681-.875-8.694a11.181,11.181,0,0,0-4.468-5.094,17.518,17.518,0,0,0-9.1-2.168c-8.729,0-15.251,5.678-15.251,10.755,0,2.639,1.59,4.344,4.05,4.344a4.293,4.293,0,0,0,2.755-1,1.032,1.032,0,0,0,.336-.761c0-.086-2.8-9.131,8.035-9.131,6.992,0,6.216,7.031,6.216,7.882,0,8.5-24.34,4.582-24.34,19.174,0,8.038,7.345,11.409,14.218,11.409,1.023,0,5.533.079,11.02-4.569.389.663.213,3.02,3.888,3.9a6.326,6.326,0,0,0,1.478.174h3.5a.128.128,0,0,0,.037-.011c1.426-.005,1.309,0,1.427-.01a.629.629,0,0,0,.289-.155C381.016,415.223,381.013,414.834,380.582,414.485ZM369.232,395.5v10.019c0,.038,0,.076,0,.114-4.58,7.758-17.049,7.955-17.049-1.076,0-8.309,14.1-8.7,17.051-12.891Z" transform="translate(-268.633 -356.004)" fill="#fff"/> <path id="Caminho_163" data-name="Caminho 163" d="M470.632,449.974" transform="translate(-344.097 -401.89)" fill="#fff"/> <path id="Caminho_164" data-name="Caminho 164" d="M169.876,388.205a2.344,2.344,0,0,0-.556-.319c-2.46-1.046-2.393-2.423-2.393-3.262,0-30.216,0-8.606,0-54.194a1.054,1.054,0,0,0-1.635-.515c-3.724,2.381-10.684,3.012-10.882,3.219-.464.485-.33,1.127.832,1.364a3.647,3.647,0,0,1,2.664,1.585,4.348,4.348,0,0,1,.62,1.551c.136.683.093,15.833.093,15.8,0,31.565-.6,31.4,1.636,33.911a6.16,6.16,0,0,0,4.628,2.064c.354,0,4.721-.012,4.864-.022a.629.629,0,0,0,.289-.155C170.31,388.942,170.307,388.553,169.876,388.205Z" transform="translate(-154.165 -329.716)" fill="#fff"/> <path id="Caminho_165" data-name="Caminho 165" d="M482.627,347.115a20.859,20.859,0,0,0-7.791,1.474c-.163.066-.323.134-.484.2-.01-6.275-.02-12.653-.02-18.362a1.053,1.053,0,0,0-1.636-.514c-3.723,2.381-10.683,3.011-10.881,3.216-.466.487-.331,1.127.831,1.365a3.648,3.648,0,0,1,2.665,1.585,4.341,4.341,0,0,1,.621,1.55c.134.684.091,15.832.091,15.8,0,19.8-.008,31.187-.008,31.187,0,.838.066,2.216-2.393,3.259a2.379,2.379,0,0,0-.557.322c-.431.347-.433.737-.165,1.028a.639.639,0,0,0,.291.157c.142.01,4.508.02,4.863.02a6.229,6.229,0,0,0,2.118-.367,6.119,6.119,0,0,0,2.473-1.657c.082.046.162.1.245.14a20.522,20.522,0,0,0,9.738,2.391c11.759,0,20.629-9.216,20.629-21.437C503.256,356.3,494.386,347.115,482.627,347.115Zm8.163,35.223a9.889,9.889,0,0,1-7.132,3.535c-3.054,0-6.367-1.735-8.971-4.865-.114-.136-.224-.277-.335-.419.044-3.856.03-14.127.01-25.664.169-.171.34-.338.517-.5a10.142,10.142,0,0,1,6.79-2.748c7.175,0,12.6,6.641,13.492,16.521A18.549,18.549,0,0,1,490.79,382.337Z" transform="translate(-338.656 -329.716)" fill="#fff"/> <path id="Caminho_166" data-name="Caminho 166" d="M316.72,388.205a2.343,2.343,0,0,0-.556-.319c-2.46-1.046-2.393-2.423-2.393-3.262,0-30.216,0-8.606,0-54.194a1.054,1.054,0,0,0-1.635-.515c-3.724,2.381-10.684,3.012-10.882,3.219-.464.485-.33,1.127.832,1.364a3.647,3.647,0,0,1,2.664,1.585,4.347,4.347,0,0,1,.62,1.551c.136.683.093,15.833.093,15.8,0,31.565-.6,31.4,1.637,33.911a6.16,6.16,0,0,0,4.628,2.064c.354,0,4.72-.012,4.864-.022a.629.629,0,0,0,.289-.155C317.154,388.942,317.151,388.553,316.72,388.205Z" transform="translate(-242.296 -329.716)" fill="#fff"/> </g> </g></svg>
         </a>
       </div>
 
@@ -164,7 +104,7 @@ if (header.categories_list) {
           aria-label="<%= _.dictionary('myAccount') %>"
         >
           <button
-            class="d-lg-none btn btn-lg"
+            class="btn btn-lg"
             id="mobile-search-btn"
             type="button"
             data-toggle="collapse"
@@ -174,7 +114,9 @@ if (header.categories_list) {
             aria-controls="search-bar"
             title="<%= _.dictionary('searchProducts') %>"
           >
-            <i class="fas fa-search"></i>
+          <div class="svg-ico">
+            <svg id="search-interface-symbol" xmlns="http://www.w3.org/2000/svg" width="89" height="89" viewBox="0 0 89 89"> <g id="_x34__4_" transform="translate(0)"> <g id="Grupo_203" data-name="Grupo 203"> <path id="Caminho_184" data-name="Caminho 184" d="M87.87,83.88l-22.9-22.536A36.225,36.225,0,0,0,74.65,36.727C74.647,16.442,57.939,0,37.327,0S.006,16.442.006,36.727,16.714,73.455,37.327,73.455a37.533,37.533,0,0,0,23.491-8.2L83.809,87.878a2.9,2.9,0,0,0,4.059,0A2.8,2.8,0,0,0,87.87,83.88ZM37.327,67.8c-17.44,0-31.578-13.913-31.578-31.077S19.886,5.651,37.327,5.651,68.905,19.564,68.905,36.727,54.767,67.8,37.327,67.8Z" transform="translate(-0.006)" fill="#fff"/> </g> </g></svg>
+          </div>
           </button>
 
           <a
@@ -184,7 +126,9 @@ if (header.categories_list) {
             href="/app/#/account/"
             title="<%= _.dictionary('myAccount') %>"
           >
-            <i class="fas fa-user"></i>
+            <div class="svg-ico">
+              <svg id="user" xmlns="http://www.w3.org/2000/svg" width="88.704" height="88.704" viewBox="0 0 88.704 88.704"> <g id="Grupo_204" data-name="Grupo 204" transform="translate(0)"> <path id="Caminho_185" data-name="Caminho 185" d="M75.714,57.342A44.182,44.182,0,0,0,58.86,46.771a25.641,25.641,0,1,0-29.015,0A44.422,44.422,0,0,0,0,88.7H6.93a37.422,37.422,0,1,1,74.844,0H88.7A44.063,44.063,0,0,0,75.714,57.342ZM44.352,44.352A18.711,18.711,0,1,1,63.063,25.641,18.732,18.732,0,0,1,44.352,44.352Z" transform="translate(0)" fill="#fff"/> </g></svg>
+            </div>
           </a>
           <a
             id="cart-button"
@@ -193,7 +137,9 @@ if (header.categories_list) {
             href="/app/#/cart"
             title="<%= _.dictionary('openCart') %>"
           >
-            <i class="fas fa-shopping-bag"></i>
+            <div class="svg-ico">
+              <svg xmlns="http://www.w3.org/2000/svg" width="76.774" height="88.704" viewBox="0 0 76.774 88.704"> <g id="Grupo_206" data-name="Grupo 206" transform="translate(0)"> <path id="shopping-bag" d="M76.759,85.789l-6.742-64.2a2.641,2.641,0,0,0-2.626-2.365H54.72V16.333a16.333,16.333,0,0,0-32.667,0v2.889H9.382a2.641,2.641,0,0,0-2.626,2.365L.014,85.789A2.64,2.64,0,0,0,2.64,88.7H74.133a2.641,2.641,0,0,0,2.626-2.915ZM27.333,16.333a11.053,11.053,0,0,1,22.106,0v2.889H27.333ZM5.572,83.425,11.759,24.5H22.053v5.818a2.64,2.64,0,0,0,5.28,0V24.5H49.44v5.818a2.64,2.64,0,0,0,5.28,0V24.5H65.014L71.2,83.425Zm0,0" transform="translate(0.001 0)" fill="#fff"/> </g></svg>
+            </div>
             <span id="cart-count" class="badge badge-primary"></span>
           </a>
         </div>
@@ -212,58 +158,7 @@ if (header.categories_list) {
         </div>
       </div>
 
-      <% if (header.search_input) {
-        const searchColSize = !isCategoriesNavFull && categories.length ? '-3' : ''
-        %>
-        <div
-          class="d-none d-lg-block col-12 col-lg<%= searchColSize %> collapse show"
-          id="search-bar"
-        >
-          <form
-            class="header__search mt-2 mt-md-3 mt-lg-0"
-            id="search-form"
-            action="/search"
-            method="get"
-          >
-            <input
-              type="search"
-              name="term"
-              placeholder="<%= _.dictionary('searchProducts') %>"
-              aria-label="<%= _.dictionary('searchProducts') %>"
-              class="header__search-input form-control"
-              id="search-input"
-            >
-            <button
-              type="submit"
-              class="header__search-btn"
-              aria-label="<%= _.dictionary('searchProducts') %>"
-            >
-              <i class="fas fa-search"></i>
-            </button>
-            <div id="instant-search">
-              <!--
-                `InstantSearch` should be open on input focus:
-                https://developers.e-com.plus/storefront/@ecomplus/storefront-components/docs/InstantSearch.html
-              -->
-            </div>
-          </form>
-
-          <% if (_.settings.domain) { %>
-            <script type="application/ld+json"><%-
-              JSON.stringify({
-                '@context': 'http://schema.org',
-                '@type': 'WebSite',
-                url: `https://${_.settings.domain}/`,
-                potentialAction: {
-                  '@type': 'SearchAction',
-                  target: `https://${_.settings.domain}/search?term={search_term_string}`,
-                  'query-input': 'required name=search_term_string'
-                }
-              })
-            %></script>
-          <% } %>
-        </div>
-      <% } %>
+      
 
       <% if (categories && categories.length) { %>
         <div class="d-none d-lg-block <%= isCategoriesNavFull ? 'col-12 order-lg-last' : 'col' %>">
@@ -279,3 +174,56 @@ if (header.categories_list) {
     </div>
   </div>
 </header>
+
+<% if (header.search_input) {
+  const searchColSize = !isCategoriesNavFull && categories.length ? '-3' : ''
+  %>
+  <div
+    class="d-none col-12 col-lg<%= searchColSize %> collapse show"
+    id="search-bar"
+  >
+    <form
+      class="header__search mt-2 mt-md-3 mt-lg-0"
+      id="search-form"
+      action="/search"
+      method="get"
+    >
+      <input
+        type="search"
+        name="term"
+        placeholder="<%= _.dictionary('searchProducts') %>"
+        aria-label="<%= _.dictionary('searchProducts') %>"
+        class="header__search-input form-control"
+        id="search-input"
+      >
+      <button
+        type="submit"
+        class="header__search-btn"
+        aria-label="<%= _.dictionary('searchProducts') %>"
+      >
+        <i class="fas fa-search"></i>
+      </button>
+      <div id="instant-search">
+        <!--
+          `InstantSearch` should be open on input focus:
+          https://developers.e-com.plus/storefront/@ecomplus/storefront-components/docs/InstantSearch.html
+        -->
+      </div>
+    </form>
+
+    <% if (_.settings.domain) { %>
+      <script type="application/ld+json"><%-
+        JSON.stringify({
+          '@context': 'http://schema.org',
+          '@type': 'WebSite',
+          url: `https://${_.settings.domain}/`,
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: `https://${_.settings.domain}/search?term={search_term_string}`,
+            'query-input': 'required name=search_term_string'
+          }
+        })
+      %></script>
+    <% } %>
+  </div>
+<% } %>

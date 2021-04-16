@@ -11,8 +11,14 @@
     "socials": false
   },
   "categories_list": {
-    "featured": [],
-    "random": 6,
+    "featured": [
+      "/?A Lola",
+      "/?Atacado",
+      "/?Produtos",
+      "/?Coleções",
+      "/?Contato"
+    ],
+    "random": 0,
     "full_width": false
   },
   "search_input": true

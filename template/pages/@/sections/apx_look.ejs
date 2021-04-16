@@ -1,0 +1,19 @@
+<% 
+
+var apx_content = _.cms('infobar') || {}
+
+%>
+<% if (apx_content.container == "Completa"){ %>
+    <div class="container-fluid" style="background-color:<%= apx_content.stripe_color %>; color:<%= apx_content.text_color %>;">
+        <div class="apx_look py-2">
+<% }else{ %>
+    <div style="background-color:<%= apx_content.stripe_color %>; color:<%= apx_content.text_color %>;">
+        <div class="container">
+            <div class="apx_look py-2" >
+<% } %>    
+       
+    </div>
+</div>
+<% if (apx_content.container == "Caixa"){ %>
+    </div>
+<% } %>   
