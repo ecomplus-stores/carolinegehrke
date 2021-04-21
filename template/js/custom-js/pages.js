@@ -8,4 +8,5 @@ const apx = {
 };
 
 $(document).ready(function(){apx.imageProportion();})
+$(window).resize(function(){apx.imageProportion();})
 

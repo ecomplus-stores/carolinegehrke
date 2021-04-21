@@ -64,6 +64,35 @@
           ]
         },
         {
+          "name": "apx_looks",
+          "label": "Looks",
+          "file": "content/apx_looks.json",
+          "fields": [
+            {
+              "label": "Título",
+              "name": "title",
+              "widget": "string",
+              "required":false
+            },
+            {
+              "label": "Largura da Seção",
+              "name": "container",
+              "widget": "select",
+              "options": ["Caixa","Completa"]
+            },
+            {
+              "label": "Produtos",
+              "name": "list",
+              "widget": "list",
+              "field": {
+                "label": "SKU do produto",
+                "name": "product_id",
+                "widget": "text"                
+              }
+            }
+          ]
+        },
+        {
           "name": "infobar",
           "label": "Barra de Informações",
           "file": "content/apx_infobar.json",

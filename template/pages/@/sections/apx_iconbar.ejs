@@ -25,17 +25,17 @@ var apx_content = _.cms('apx_infobar') || {}
                     <ul class="glide__slides">
                         <% if (apx_content.list){ %>
                             <% apx_content.list.forEach(function(item){  %>
-                                <div class="col-auto px-4 glide__slide">
+                                <div class="col px-4 glide__slide">
                                     <div class="row d-flex align-items-center">
-                                        <div class="col-auto pr-0">
+                                        <div class="col text-center">
+                                            <div>
                                             <% if (item.icon) { %>
                                                 <img src="<%= item.icon %>"/>
                                             <% } else { %>
                                                 <img src=""/>
                                             <% } %>
-                                        </div>
-                                        <div class="col-auto">
-                                            <b><%= item.title %></b><br>
+                                            </div>
+                                            <b><%= item.title %></b>
                                             <span><%= item.text %></span>
                                         </div>
                                     </div>

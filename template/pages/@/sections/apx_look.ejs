@@ -1,19 +1,130 @@
 <% 
+var apx_content = _.cms('apx_looks') || {}
 
-var apx_content = _.cms('infobar') || {}
-
-%>
-<% if (apx_content.container == "Completa"){ %>
-    <div class="container-fluid" style="background-color:<%= apx_content.stripe_color %>; color:<%= apx_content.text_color %>;">
-        <div class="apx_look py-2">
-<% }else{ %>
-    <div style="background-color:<%= apx_content.stripe_color %>; color:<%= apx_content.text_color %>;">
-        <div class="container">
-            <div class="apx_look py-2" >
-<% } %>    
-       
+if (Array.isArray(apx_content.list) && apx_content.list.length) {
+  const search = new _.EcomSearch()
+  await search.setProductIds(apx_content.list).fetch(true)
+  const items = search.getItems().filter(item => _.ecomUtils.inStock(item))
+  const title = apx_content.title
+  
+  //console.log(items)
+%> 
+    <div class="apx_look">
+    <% if (apx_content.container == "Completa"){ %>
+            <div class="container-fluid">            
+    <% }else{ %>
+            <div class="container">
+    <% } %>    
+            <%- await include(`@/sections/apx_title`, { _,   title}) %>
+            <% for (let i = 0; i < items.length; i++) { 
+                var itemData = {}
+                var imgObj = _.ecomUtils.img(items[i])                
+                if (imgObj) {
+                    itemData.pictures = [{
+                        _id: _.ecomUtils.randomObjectId(),
+                        normal: imgObj
+                    }]
+                }
+                %>
+                
+                <div class="col-6 col-md">
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-6 kit-cover pr-0">
+                                <% if (imgObj) { %>
+                                    <picture>
+                                      <img
+                                        data-src="<%= imgObj.url %>"
+                                        alt="<%= imgObj.alt %>"
+                                        class="lozad-delay fade"
+                                        <% if (imgObj.url.startsWith('https://ecoms1.com/')) { %>
+                                          crossorigin="anonymous"
+                                        <% } %>
+                                      >
+                                    </picture>
+                                  <% } %>
+                            </div>
+                            <div class="col-6 kit-items">
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-5">
+                                        <% if (imgObj) { %>
+                                            <picture>
+                                              <img
+                                                data-src="<%= imgObj.url %>"
+                                                alt="<%= imgObj.alt %>"
+                                                class="lozad-delay fade"
+                                                <% if (imgObj.url.startsWith('https://ecoms1.com/')) { %>
+                                                  crossorigin="anonymous"
+                                                <% } %>
+                                              >
+                                            </picture>
+                                          <% } %>
+                                    </div>
+                                    <div class="col-7">
+                                        <strong>Nome do Produto</strong>
+                                        <span>
+                                            <strong>R$ 999,99</strong> ou <span>3x de R$99,99</span>
+                                        </span>
+                                        <small>
+                                            R$99,99 no <b>ATACADO</b>
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-5">
+                                        <% if (imgObj) { %>
+                                            <picture>
+                                              <img
+                                                data-src="<%= imgObj.url %>"
+                                                alt="<%= imgObj.alt %>"
+                                                class="lozad-delay fade"
+                                                <% if (imgObj.url.startsWith('https://ecoms1.com/')) { %>
+                                                  crossorigin="anonymous"
+                                                <% } %>
+                                              >
+                                            </picture>
+                                          <% } %>
+                                    </div>
+                                    <div class="col-7">
+                                        <strong>Nome do Produto</strong>
+                                        <span>
+                                            <strong>R$ 999,99</strong> ou <span>3x de R$99,99</span>
+                                        </span>
+                                        <small>
+                                            R$99,99 no <b>ATACADO</b>
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-5">
+                                        <% if (imgObj) { %>
+                                            <picture>
+                                              <img
+                                                data-src="<%= imgObj.url %>"
+                                                alt="<%= imgObj.alt %>"
+                                                class="lozad-delay fade"
+                                                <% if (imgObj.url.startsWith('https://ecoms1.com/')) { %>
+                                                  crossorigin="anonymous"
+                                                <% } %>
+                                              >
+                                            </picture>
+                                          <% } %>
+                                    </div>
+                                    <div class="col-7">
+                                        <strong>Nome do Produto</strong>
+                                        <span>
+                                            <strong>R$ 999,99</strong> ou <span>3x de R$99,99</span>
+                                        </span>
+                                        <small>
+                                            R$99,99 no <b>ATACADO</b>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+              <% } %>                      
+        </div>
     </div>
-</div>
-<% if (apx_content.container == "Caixa"){ %>
-    </div>
-<% } %>   
+<% } %> 
