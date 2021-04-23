@@ -51,8 +51,14 @@
             <%= _.ecomUtils.name(_.state) %>
           </h1>
           <p class="product__sku">
-            COD: <%= _.state.sku %>
+            REF: <%= _.state.sku %>
           </p>
+
+          <% if (_.state.short_description) { %>
+            <p class="product__info lead">
+              <%= _.state.short_description %>
+            </p>
+          <% } %>
 
           <div id="product-actions">
             <div id="product-loading">
@@ -75,6 +81,11 @@
               </div>
 
               <div class="product__buy">
+                <div class="apx_quantity_selector">
+                  <button type="button"><i class="fas fa-chevron-down"></i></button>
+                  <input type="tel" name="form-control apx_quantity-selector__input"/>
+                  <button type="button"><i class="fas fa-chevron-up"></i></button>
+                </div>
                 <button
                   type="button"
                   class="btn btn-lg btn-primary"
@@ -84,7 +95,6 @@
                   <% } %>
                 >
                   <div data-slot="buy-button-content">
-                    <i class="fas fa-shopping-bag mr-1"></i>
                     <% if (_.state.kit_composition && _.state.kit_composition.length) { %>
                       <%= _.dictionary('buyKit') %>
                     <% } else { %>
@@ -96,11 +106,7 @@
             </div>
           </div>
 
-          <% if (_.state.short_description) { %>
-            <p class="product__info lead">
-              <%= _.state.short_description %>
-            </p>
-          <% } %>
+          
         </div>
       </div>
 

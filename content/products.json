@@ -9,20 +9,12 @@
       "enabled": true
     },
     {
-      "type": "related-products",
-      "title": "Produtos relacionados"
-    },
-    {
-      "type": "recommended-products",
-      "title": "Quem comprou este produto, também comprou:"
-    },
-    {
       "type": "product-description",
       "enabled": true
     },
     {
-      "type": "product-specifications",
-      "enabled": true
-    }
+      "type": "related-products",
+      "title": "[small]para ir além[/small]produtos que combinam"
+    }    
   ]
 }

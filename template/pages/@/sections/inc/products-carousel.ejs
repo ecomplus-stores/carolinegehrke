@@ -94,7 +94,7 @@
       <div class="container-fluid">
         <ul class="row list-unstyled">
           <% for (let i = 0; i < opt.items.length; i++) { %>
-            <li class="col-6 col-md-3 mb-4">
+            <li class="col-6 <%= _.pageName == 'home' ? 'col-md-3' : 'col-md-4' %> mb-4">
               <%- await include('@/sections/inc/product-item', {
                 _, opt: { item: opt.items[i] }
               }) %>
