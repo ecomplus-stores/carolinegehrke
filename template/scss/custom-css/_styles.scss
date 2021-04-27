@@ -317,7 +317,17 @@ body > iframe{display:none;}
     z-index:2;
     text-align:center
 }
-.product__buy .apx_quantity_selector input{width:180px;height:60px;background:#f7f7f7;font-size:16px;letter-spacing:1px;border-radius:5px;border:0;}
+.product__buy .apx_quantity_selector input{
+    width: 180px;
+    height: 60px;
+    background: #f7f7f7;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border: 0;
+    text-align: center;
+    pointer-events: none;
+}
 
 .product__buy{display:flex;margin:2em 0}
 .product__buy > span{    

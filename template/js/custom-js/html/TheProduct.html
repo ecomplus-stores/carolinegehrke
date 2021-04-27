@@ -96,7 +96,6 @@
           </slot>
 
           <template v-else>
-            
             <slot
               name="variations"
               v-if="hasVariations"
@@ -207,10 +206,37 @@
 
             <template v-else>
               <div class="product__buy">
+                <!-- <quantity-selector
+                    :items="[body]"
+                    :min="body.min_quantity"
+                    :max="body.quantity"
+                    :slug="body.slug"
+                >
+                  <template #buy-button-content>
+                    <slot name="buy-button-content"/>
+                  </template>
+                </quantity-selector> -->
                 <div class="apx_quantity_selector">
-                  <button type="button"><i class="fas fa-chevron-down"></i></button>
-                  <input type="tel" name="form-control apx_quantity-selector__input"/>
-                  <button type="button"><i class="fas fa-chevron-up"></i></button>
+                  <button type="button"
+                  @click="ev => changeQntUn(body, -1,ev)"
+                  ><i class="fas fa-chevron-down"></i></button>
+                  
+                  <input type="tel" 
+                    :min="body.min_quantity"
+                    :max="body.quantity"
+                    value="1"
+                    :disabled="!isInStock"
+                    :readonly="body.min_quantity === body.max_quantity"
+
+                    @change="ev => changeQntUn(body, null, ev)"
+                    @keyup.up="changeQntUn(body, 1,this)"
+                    @keyup.down="changeQntUn(body, -1, this)"
+
+                    name="form-control apx_quantity-selector__input"/>
+                  
+                  <button type="button"
+                  @click="ev => changeQntUn(body, 1,ev)"
+                  ><i class="fas fa-chevron-up"></i></button>
                 </div>
                 <span @click="buy">
                   <slot
@@ -230,7 +256,6 @@
                   </slot>
                 </span>
               </div>
-
               <p
                 class="product__short-stock"
                 v-if="isLowQuantity"
