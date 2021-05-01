@@ -169,53 +169,10 @@
               </div>
             </slot>
 
-            <div
-              v-if="isKit"
-              class="product__kit"
-            >
-              <slot
-                name="kit"
-                v-bind="{ kitItems }"
-              >
-                <transition enter-active-class="animated fadeInUp">
-                  <quantity-selector
-                    v-if="kitItems.length"
-                    :items="kitItems"
-                    :min="body.min_quantity"
-                    :max="body.quantity"
-                    :slug="body.slug"
-                    :kit-product-id="body._id"
-                    :kit-name="name"
-                    :kit-price="fixedPrice"
-                  >
-                    <template #buy-button-content>
-                      <slot name="buy-button-content"/>
-                    </template>
-                  </quantity-selector>
-                </transition>
+            
 
-                <span
-                  v-if="!kitItems.length"
-                  class="product__kit-loading spinner-border"
-                  role="status"
-                >
-                  <span class="sr-only">Loading...</span>
-                </span>
-              </slot>
-            </div>
-
-            <template v-else>
+            <template>
               <div class="product__buy">
-                <!-- <quantity-selector
-                    :items="[body]"
-                    :min="body.min_quantity"
-                    :max="body.quantity"
-                    :slug="body.slug"
-                >
-                  <template #buy-button-content>
-                    <slot name="buy-button-content"/>
-                  </template>
-                </quantity-selector> -->
                 <div class="apx_quantity_selector">
                   <button type="button"
                   @click="ev => changeQntUn(body, -1,ev)"
@@ -224,7 +181,7 @@
                   <input type="tel" 
                     :min="body.min_quantity"
                     :max="body.quantity"
-                    value="1"
+                    :value="body.min_quantity ? body.min_quantity : 1"
                     :disabled="!isInStock"
                     :readonly="body.min_quantity === body.max_quantity"
 

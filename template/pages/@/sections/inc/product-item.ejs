@@ -66,7 +66,7 @@ if (imgObj) {
     </a>
 
     <div class="product-card__prices prices">
-      <strong class="prices__value">
+      <strong class="prices__value" data-price="<%= itemData.price %>">
         <% if (opt.item.available && opt.item.visible && _.ecomUtils.inStock(opt.item)) { %>
           <%= _.ecomUtils.formatMoney(itemData.price) %>
         <% } else { %>
