@@ -406,8 +406,6 @@ body:not(#page-home) #content .products-carousel{width:1260px;margin-left:auto;m
     .recommended-products .list-unstyled > li:nth-child(n+4){display:none}
 }
 
-
-
 /* CHECKOUT */
 .app .checkout__info{
     background: transparent;
@@ -624,4 +622,29 @@ body:not(#page-home) #content .products-carousel{width:1260px;margin-left:auto;m
 .app__header .app__contact, .app__header .app__safe {
     font-size: 14px;
     line-height: 32px;
+}
+.product-card .prices__value .prices__installments:before{content:"ou"}
+.product-card .prices__value .prices__installments{
+    font-size: 12px;
+    letter-spacing: 0;
+    display: inline-block;
+}
+.product-card .prices__compare{display:block;margin-bottom:5px;}
+
+.minicart__subtotal .prices__installments{
+    display:block;
+    letter-spacing:0;
+    font-size:12px;
+    margin-top:5px;
+}
+
+.list-inline{display:flex;margin:0;align-items:baseline;}
+.list-inline{}
+.product__payment.card{display:none;}
+#product .prices__installments:before{content:"ou "!important}
+#product .prices__installments{
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: normal;
+    letter-spacing: 0;
 }

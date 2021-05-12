@@ -23,9 +23,7 @@
       {{ i19asOf }}
     </small>
     {{ formatMoney(price) }}
-  </strong>
 
-  <transition-group enter-active-class="animated slideInDown">
     <div
       key="installments"
       v-if="installmentsNumber > 1"
@@ -45,7 +43,9 @@
         {{ i19interestFree }}
       </small>
     </div>
+  </strong>
 
+  <transition-group enter-active-class="animated slideInDown">
     <div
       key="discount"
       v-if="typeof priceWithDiscount === 'number' && priceWithDiscount < price"

@@ -71,8 +71,9 @@ $(document).ready(function(){
                         let product = v._source;
                         let mb = result.hits.hits.length - 1 != k ? 'mb-3' : '' 
                         let r = $('<div class="row align-items-center '+ mb +'"></div>');
+                        let parcelas = 3;
                         r.append('<div class="col-5"><picture><img data-src="'+ product.pictures[0].zoom.url +'" alt="'+ product.name+'" class="lozad-delay fade" crossorigin="anonymous"/></picture></div>');
-                        r.append('<div class="col-7"><strong>'+ product.name +'</strong><span><strong>' + ecomUtils.formatMoney(product.price) + '</strong> ou <span> XXX de XXXX</span></span><small>'+ ecomUtils.formatMoney((product.price * atacado[0])) +' no <b>ATACADO</b></small></div>')
+                        r.append('<div class="col-7"><strong>'+ product.name +'</strong><span><strong>' + ecomUtils.formatMoney(product.price) + '</strong> ou <span> '+ parcelas +' de '+ecomUtils.formatMoney(product.price / parcelas)+'</span></span><small>'+ ecomUtils.formatMoney((product.price * atacado[0])) +' no <b>ATACADO</b></small></div>')
                         r.appendTo(me.find('.kit-items'));
                     });
                 })
@@ -86,7 +87,7 @@ $(document).ready(function(){
                 
                     
             }).catch(console.error)
-        })
+        })       
     }
     
 })
