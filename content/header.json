@@ -13,8 +13,8 @@
   "categories_list": {
     "featured": [
       "/?A Lola",
-      "/?Atacado",
-      "/?Produtos",
+      "/atacado?Atacado",
+      "/produtos?Produtos",
       "/?Coleções",
       "/?Contato"
     ],
