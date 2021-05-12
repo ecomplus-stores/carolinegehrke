@@ -16,7 +16,7 @@
       "/atacado?Atacado",
       "/produtos?Produtos",
       "/?Coleções",
-      "/?Contato"
+      "/pages/fale-conosco?Contato"
     ],
     "random": 0,
     "full_width": false

@@ -18,7 +18,7 @@ const title = apx_content.title
         //console.log(arr.json());
         for (var i = 0; i < <%= apx_content.quantity  %>; i++) {
             if(arr.data[i].media_type == "IMAGE"){
-                images = images + "<div class='col-6 col-md<%= Number.isInteger(12/apx_content.quantity) ? '-' + 12/apx_content.quantity : '' %>'><a href='"+ arr.data[i].permalink +"'>" +
+                images = images + "<div class='col-6 pb-md-0 pb-4 col-md<%= Number.isInteger(12/apx_content.quantity) ? '-' + 12/apx_content.quantity : '' %>'><a href='"+ arr.data[i].permalink +"'>" +
                     "<img src='"+ arr.data[i].media_url +"'/>" + 
                     "<span>"+ arr.data[i].caption.substring(0,75) +"...</span>" +
                 "</a></div>";

@@ -1,18 +1,96 @@
 <article id="content" class="page page--<%= _.pageName %>">
-  <div class="sections pb-1 pb-sm-2 pb-lg-4">
-    <%
-    // load page sections and render each one
-    const { sections } = _.state
-    if (Array.isArray(sections)) {
-      for (let i = 0; i < sections.length; i++) {
-        const opt = sections[i]
-        if (opt && opt.enabled !== false) {
-          %>
-          <%- await include(`@/sections/${opt.type}`, { _, opt }) %>
-          <%
-        }
-      }
-    }
+  
+  <% if (_.pageName.includes('pages')) { 
+
+    const footer = _.cms('footer') || {}
+
     %>
-  </div>
+    <div class="container pt-md-5">
+      <div class="row">
+        <div class="col-md-3 d-md-block d-none apx_sidebar">
+          <% if (footer.links_1.list_pages || footer.links_1.list.length) { %>
+            <h4>
+              <%= footer.links_1.title || _.dictionary('pages') %>
+            </h4>              
+            <% if (footer.links_1.list_pages) { %>
+              <ul class="footer__links">
+                <% (_.cms('pages') || []).forEach(slug => { %>
+                  <% const { title } = _.cms(`pages/${slug}`) %>
+                  <li>
+                    <i class="fas fa-angle-right"></i>
+                    <a href="/pages/<%= slug %>">
+                      <%= title %>
+                    </a>
+                  </li>
+                <% }) %>
+              </ul>
+            <% } else { %>
+              <ul class="footer__links">
+                <% footer.links_1.list.forEach(({ url, text }) => { %>
+                  <li>
+                    <i class="fas fa-angle-right"></i>
+                    <a href="<%= url %>">
+                      <%= text %>
+                    </a>
+                  </li>
+                <% }) %>
+              </ul>
+            <% } %>              
+          <% } %>
+    
+          <% if (footer.links_2.list_categories || footer.links_2.list.length) { %>
+              <h4>
+                <%= footer.links_2.title || _.dictionary('categories') %>
+              </h4>
+              <% if (footer.links_2.list_categories) { %>
+                <ul class="footer__links">
+                  <% _.categories.forEach(({ name, slug, parent }) => { %>
+                    <% if (!parent) { %>
+                      <li>
+                        <i class="fas fa-angle-right"></i>
+                        <a href="/<%= slug %>">
+                          <%= name %>
+                        </a>
+                      </li>
+                    <% } %>
+                  <% }) %>
+                </ul>
+              <% } else { %>
+                <ul class="footer__links">
+                  <% footer.links_2.list.forEach(({ url, text }) => { %>
+                    <li>
+                      <i class="fas fa-angle-right"></i>
+                      <a href="<%= url %>">
+                        <%= text %>
+                      </a>
+                    </li>
+                  <% }) %>
+                </ul>
+              <% } %>
+          <% } %>
+        </div>
+        <div class="col-md-9 col-12">
+  <% } %>
+          <div class="sections pb-1 pb-sm-2 pb-lg-4">
+            <%
+            // load page sections and render each one
+            const { sections } = _.state
+            if (Array.isArray(sections)) {
+              for (let i = 0; i < sections.length; i++) {
+                const opt = sections[i]
+                if (opt && opt.enabled !== false) {
+                  %>
+                  <%- await include(`@/sections/${opt.type}`, { _, opt }) %>
+                  <%
+                }
+              }
+            }
+            %>
+          </div>
+
+  <% if (_.pageName.includes('pages')) { %>
+        </div>
+      </div>
+    </div>
+  <% } %>
 </article>

@@ -648,3 +648,149 @@ body:not(#page-home) #content .products-carousel{width:1260px;margin-left:auto;m
     font-weight: normal;
     letter-spacing: 0;
 }
+
+.header__buttons .btn:first-child{margin:0}
+
+.apx_form{}
+.apx_form label{
+    font-size:14px;
+    display:block;
+    color:#212121
+}
+.apx_form input,
+.apx_form textarea{
+    min-height:60px;
+    width:100%;
+    display:block;
+    margin-bottom:1rem;
+    border-radius:3px;
+    border:1px solid #212121;
+}
+.apx_form button{
+    background: #212121;
+    color: #fff;
+    letter-spacing: 1px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border:0;
+    border-radius:3px;
+    min-height:60px;
+    text-transform:lowercase;
+
+}
+
+.extra-page .md-content h3{font-size:16px;letter-spacing:1px;margin:2rem 0 1rem 0;}
+.extra-page .md-content p{font-size:14px;margin:0;line-height:36px;}
+
+.page-title.container{margin-bottom:0;margin-top:0;}
+.page-title.container h1{font-size:24px;letter-spacing:1px;}
+
+.apx_sidebar{}
+.apx_sidebar h4{font-size:24px;margin:0 0 1rem 0;letter-spacing:1px;}
+.apx_sidebar ul{margin-bottom:3rem;}
+.apx_sidebar ul li a{font-size:16px;margin:.5rem 0}
+.apx_sidebar ul li a:before{
+    content: "";
+    border-top: 1px solid #212121;
+    border-right: 1px solid #212121;
+    height: 7px;
+    width: 7px;
+    display: inline-block;
+    transform: rotate(45deg);
+    margin: -2px 10px 0 0;
+    vertical-align: middle;
+}
+
+#page-categories .page-title__head h1{
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 36px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header__nav > ul > li:nth-child(3) > a,
+.header__nav > ul > li:nth-child(4) > a{
+    font-weight:600;
+}
+@media(max-width:990px){
+    .top-bar__countdown{
+        font-size: 11px;
+        letter-spacing: 0;
+        padding: .5rem 0;
+    }
+    .logo_svg svg{
+        height: 30px;
+        width: auto;
+    }
+    .header__buttons .btn:first-child{margin:0}
+    .header__buttons .btn{margin-left:1rem}
+    .header .svg-ico svg{height:22px;}
+    .header #cart-button .svg-ico svg{height:24px;}
+    .header__buttons #cart-button #cart-count{
+        padding: 0;
+        bottom: 5px;
+        font-size: 10px;
+    }
+    .header__row{min-height:0;}
+    .header{
+        padding: 15px 15px 15px 10px;
+    }
+    #page-home .sections .responsive-baner:first-child{margin-bottom:0}
+    #page-home .sections .banners-grid:nth-child(2){margin-top:1rem;}
+    .products-carousel{max-width:100%;}
+
+    .row.list-unstyled{margin:0 -10px;}
+    .row.list-unstyled > li{padding:0 5px}
+    .product-card .apx-discount__rule{font-size:11px;}
+    .product-card__name{padding:0}
+    .apx-title{font-size:20px;letter-spacing:3px;margin: 1rem 0 2rem 0;}
+
+    .apx_look .kit-items .col-7>strong{font-size:12px;}
+    .apx_look .kit-items .col-7>span>strong{display:block;}
+    .apx_look{padding:1rem 0;    margin: 2rem 0;}
+    
+    .apx_instafeed > div:nth-child(n+5){display:none;}
+    .apx_instafeed{margin-bottom:0;}
+    .apx_stripe{padding:2rem 0;}
+
+    .apx_newsletter{
+        padding: 2rem 1rem 1rem 1rem;
+    }
+    .apx_newsletter a,
+    .apx_newsletter div{justify-content:center!important;text-align:center;}
+    .apx_newsletter .footer__social a{margin:0 .7rem;}
+    .apx_newsletter input{width:100%;
+    }
+
+    .footer .bg-footer{padding:2rem 0;}
+    .footer__contacts a, .footer__links a{font-size:12px;}
+    .footer .footer__title{border:0;}
+    .footer__title:after{display:none;}
+    .footer .footer__title + .collapse{display:block!important}
+
+    .copy{margin-top:2rem;}
+    .footer .bg-footer,
+    .copy,
+    .copy *{justify-content:center!important;text-align:center!important;}
+    
+    .product__buy{flex-wrap: wrap;}
+    
+    .product__buy .apx_quantity_selector,
+    .product__buy .apx_quantity_selector input{width:100%;}
+    .product__buy>span{padding-left:0;margin-top:1rem;}
+    
+    .header__toggler{padding:0}
+    .header__toggler,
+    .header__toggler i{color:#fff;opacity:1}
+
+    .header__nav{margin: 2rem -.7rem -1rem -.7rem;}
+    .header__nav > ul{display:block;}
+    .header__nav > ul > li{margin:1rem 0;}
+    
+    #page-categories .page-title__head h1{margin-top:2rem;font-size:24px;}
+    
+}
