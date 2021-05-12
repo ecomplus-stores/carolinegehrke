@@ -140,6 +140,9 @@ $(window).resize(function(){
 
 $('#mobile-search-btn').click(function(){
     $('.header__search-input').val('');
+    if($('#search-bar').hasClass('apx_visible')){
+        $('body').attr('style','')
+    }
     $('#search-bar').toggleClass('apx_visible');
 })
 $('.header__search-input').keyup(function(){
