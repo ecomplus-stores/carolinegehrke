@@ -67,12 +67,12 @@ $('.apx_form').submit(function(e){
     e.preventDefault();
     var mail = [];
     mail.form = $(this);
-    mail.destination = $(this).find('input[name="destination"]').val();
+    mail.destination = $(this).find('[name="destination]') ? $(this).find('input[name="destination"]').val() : "contato@lola-b.com";
     mail.subject = $(this).find('input[name="subject"]').val();
     mail.body = "";
 
-    mail.form.find('input, textarea').each(function(){
-        mail.body = mail.body + $(this).closest('div').find('label').text() + ': ' + $(this).val();
+    mail.form.find('input:not([type="hidden"]), textarea').each(function(){
+        mail.body = mail.body + $(this).closest('div').find('label').text() + ': ' + $(this).val() + '<br>';
     });
 
     axios.post('https://us-central1-marketingtools-ecomplus.cloudfunctions.net/app/alpix/apx_sendmail', {
