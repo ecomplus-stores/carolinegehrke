@@ -1,7 +1,16 @@
 {
-    "title": "Fale Conosco",
-    "meta_title": "Quem Somos",
-    "meta_description": "Quem Somos",
-    "body": ""
-  }
-  
+  "title": "Fale Conosco",
+  "meta_title": "Fale Conosco",
+  "meta_description": "",
+  "body": "Fone / Whatsapp: (47) 9 9255 9091\n\nInstagram e Facebook: @lolab.oficial\n\nAtendimento: Segunda a Sexta das 8h30 às 18h\n\n### Espaço Físico\n\nEndereço: Rodovia BR-470, n 1625, Sala 40 | Encano do Norte, Indaial - SC, 89130-000\n\nExpediente: Segunda a Quinta das 5h00 às 14h | Sexta-Feira das 7h00 às 14h\n\n### Atendimento por E-mail\n\nSe preferir, entre em contato direto através do e-mail contato@lola-b.com",
+  "sections": [
+    {
+      "type": "extra-page",
+      "enabled": true
+    },
+    {
+      "type": "custom-html",
+      "html": "<form class=\"apx_form\">\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <label for=\"\">Nome</label>\n      <input type=\"text\" name=\"nome\" required/>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <label for=\"\">E-mail</label>\n      <input type=\"email\" name=\"email\" required/>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-12 col-md-4\">\n      <label for=\"\">Telefone</label>\n      <input type=\"tel\" name=\"telefone\" required/>\n    </div>\n    <div class=\"col-12 col-md-4\">\n      <label for=\"\">Cidade</label>\n      <input type=\"text\" name=\"cidade\" required/>\n    </div>\n    <div class=\"col-12 col-md-4\">\n      <label for=\"\">Estado</label>\n      <input type=\"text\" name=\"estado\" required/>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <label for=\"\">Mensagem</label>\n      <textarea name=\"nome\" required rows=\"4\"></textarea>\n    </div>\n  </div>\n</div>"
+    }
+  ]
+}
