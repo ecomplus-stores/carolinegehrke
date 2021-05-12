@@ -717,6 +717,7 @@ body:not(#page-home) #content .products-carousel{width:1260px;margin-left:auto;m
 .header__nav > ul > li:nth-child(4) > a{
     font-weight:600;
 }
+
 @media(max-width:990px){
     .top-bar__countdown{
         font-size: 11px;
@@ -793,6 +794,4 @@ body:not(#page-home) #content .products-carousel{width:1260px;margin-left:auto;m
     .header__nav > ul > li{margin:1rem 0;}
     
     #page-categories .page-title__head h1{margin-top:2rem;font-size:24px;}
-    
-    
 }
