@@ -718,6 +718,22 @@ body:not(#page-home) #content .products-carousel{width:1260px;margin-left:auto;m
     font-weight:600;
 }
 
+#search-bar.apx_visible{
+    display:block!important;
+}
+// #search-bar.apx_visible > form > input,
+// #search-bar.apx_visible > form > button{display:none!important;}
+
+.header__search{
+    padding: 0;
+    margin: 3rem -15px -1.6rem -15px;
+    width: calc(100% + 30px);
+    border-radius: 0;
+    overflow: visible;
+}
+.header__search-input{text-align: center;padding:2rem;border-radius:0;border-bottom: 1px solid #f8f8f8;}
+#search-bar.apx_visible{min-width:100%;}
+
 @media(max-width:990px){
     .top-bar__countdown{
         font-size: 11px;
@@ -794,4 +810,79 @@ body:not(#page-home) #content .products-carousel{width:1260px;margin-left:auto;m
     .header__nav > ul > li{margin:1rem 0;}
     
     #page-categories .page-title__head h1{margin-top:2rem;font-size:24px;}
+}
+
+
+#search-bar .backdrop{display:none;}
+#search-bar .search__box.card{
+    border:0;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1;
+    border-radius: 0;
+    width: 100%;
+    border: 0;
+    margin: 0 0px;
+    max-height: 60vh;
+}
+#search-bar .search__box.card .search-engine__info{display:none;}
+#search-bar .search__history{text-align:right}
+
+#search-bar .search__body{max-height:50vh}
+#search-bar .search__box.card .search__header{display:none;}
+#search-bar .search__box.card .search-engine__results{}
+#search-bar .search__box.card .search-engine__results .search-engine__info h3{display:none;}
+
+#search-bar .search__footer{
+    background: #f7f7f7;
+    border-radius: 0;
+    padding: 1rem 2rem;    
+}
+#search-bar .search__footer *{color:#212121;font-size:16px;}
+#search-bar .search__footer .search__count button{
+    background: #212121;
+    color: #fff;
+    letter-spacing: 1px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border: 0;
+    text-transform: lowercase;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f8f8f8;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #212121;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #666;
+  }
+
+  #instant-search .product-card--small .product-card__pictures{float:left;margin-right:15px;}
+  #instant-search .product-card__offer-stamp{display:none;}
+  #instant-search .product-card .prices__value .prices__installments{display: block;
+    margin-top: 5px;
+}
+
+@media(max-width:990px){
+    .header__search{
+        margin: 20px -25px -15px -25px;
+    width: calc(100% + 55px);
+    background: #fff;
+    }
+    .header__search-input{padding: 1.5rem!important;}
+    // #instant-search .product-card--small .product-card__pictures{float:none;margin:0;display:none}
+    #instant-search .search-engine__retail > .row > div{min-width:100%;}
 }

@@ -67,7 +67,7 @@ $('.apx_form').submit(function(e){
     e.preventDefault();
     var mail = [];
     mail.form = $(this);
-    mail.destination = $(this).find('[name="destination]') ? $(this).find('input[name="destination"]').val() : "contato@lola-b.com";
+    mail.destination = $(this).find('[name="destination]').val() != undefined ? $(this).find('input[name="destination"]').val() : "contato@lola-b.com";
     mail.subject = $(this).find('input[name="subject"]').val();
     mail.body = "";
 
@@ -128,17 +128,28 @@ $(document).ready(function(){
                     if (error.response) {
                         console.log(error.response)
                     }
-                })
-
-                
-                    
+                })  
             }).catch(console.error)
         })       
-    }   
-    
-})
+    }       
+});
 
 $(window).resize(function(){
     apx.imageProportion();
+});
+
+$('#mobile-search-btn').click(function(){
+    $('.header__search-input').val('');
+    $('#search-bar').toggleClass('apx_visible');
 })
+$('.header__search-input').keyup(function(){
+    $('body .search__input').val($(this).val()).[0].dispatchEvent(new Event('input'));
+});
+$('body').click(function(e){
+    if($(e.target).closest('#header').length == 0){
+        $('#instant-search .search__status .close').click();
+        $('#mobile-search-btn').click();
+    }
+});
+
 
