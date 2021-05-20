@@ -149,7 +149,7 @@ $('.header__search-input').keyup(function(){
     $('body .search__input').val($(this).val()).[0].dispatchEvent(new Event('input'));
 });
 $('body').click(function(e){
-    if($(e.target).closest('#header').length == 0){
+    if($(e.target).closest('#header').length == 0 && $('.apx_visible').length == 1){
         $('#instant-search .search__status .close').click();
         $('#mobile-search-btn').click();
     }
