@@ -68,6 +68,7 @@ $('.apx_form').submit(function(e){
     var mail = [];
     mail.form = $(this);
     mail.destination = $(this).find('[name="destination]').val() != undefined ? $(this).find('input[name="destination"]').val() : "contato@lola-b.com";
+    mail.replyTo = $(this).find('input[name="email"]').val();
     mail.subject = $(this).find('input[name="subject"]').val();
     mail.body = "";
 
@@ -79,7 +80,8 @@ $('.apx_form').submit(function(e){
         storeId : storefront.settings.store_id,
         destination : mail.destination,
         subject : mail.subject,
-        content : mail.body
+        content : mail.body,
+        reply_mail: mail.replyTo
     })
     .then(function(response){
         alert(response.data.msg)
