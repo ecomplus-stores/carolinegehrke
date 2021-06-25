@@ -9,8 +9,10 @@ const title = apx_content.title
     <%- await include(`@/sections/apx_title`, { _,   title}) %>
     <div class="apx_instafeed row"></div>
 </div>
+<script src="<%= apx_content.token %>"></script>
 <script>
-    fetch('https://graph.instagram.com/me/media?access_token=<%= apx_content.token %>&fields=media_url,media_type,caption,permalink')
+    console.log(InstagramToken);
+    fetch('https://graph.instagram.com/me/media?access_token='+ InstagramToken +'&fields=media_url,media_type,caption,permalink')
     .then(function (response) {
         return response.json();
     }).then(function (arr){
@@ -27,8 +29,7 @@ const title = apx_content.title
         let feed = document.querySelector('.apx_instafeed');
         feed.innerHTML = feed.innerHTML + images;
 
-    })
-    .catch((err) => {
+    }).catch((err) => {
         console.log(err);
     });
 </script>

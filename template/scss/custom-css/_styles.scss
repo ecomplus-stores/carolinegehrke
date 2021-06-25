@@ -886,3 +886,5 @@ body:not(#page-home) #content .products-carousel{width:1260px;margin-left:auto;m
     // #instant-search .product-card--small .product-card__pictures{float:none;margin:0;display:none}
     #instant-search .search-engine__retail > .row > div{min-width:100%;}
 }
+
+[data-cms-collection="pages"] .breadcrumb{display:none!important;}
