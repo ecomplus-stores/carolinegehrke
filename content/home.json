@@ -4,16 +4,16 @@
   "sections": [
     {
       "type": "responsive-banner",
-      "img": "/img/uploads/joeyy-lee-hxhmzwysb8s-unsplash.png"
+      "img": "/img/uploads/header.png"
     },
     {
       "type": "banners-grid",
       "banners": [
         {
-          "img": "/img/uploads/jasmin-chew-ubenyvk6ed0-unsplash.png"
+          "img": "/img/uploads/mb01.png"
         },
         {
-          "img": "/img/uploads/kate-hliznitsova-vbnxgxj6cjg-unsplash.png"
+          "img": "/img/uploads/mb02.png"
         }
       ]
     },
@@ -35,6 +35,6 @@
     {
       "type": "custom-html",
       "html": "[alpix]iconbar[/alpix]"
-    }   
+    }
   ]
 }
