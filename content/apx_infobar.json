@@ -5,8 +5,8 @@
   "list": [
     {
       "icon": "/img/uploads/black-shop-tag.png",
-      "title": "50% de desconto",
-      "text": "no atacado"
+      "title": "Valores Especiais",
+      "text": "para atacado"
     },
     {
       "title": "Entrega Garantida",
@@ -19,7 +19,7 @@
       "icon": "/img/uploads/lock.png"
     },
     {
-      "title": "Troca Grátis",
+      "title": "1ª Troca Grátis",
       "text": "30 dias para troca",
       "icon": "/img/uploads/cycle-couple-of-arrows-hand-drawn-lines.png"
     }
