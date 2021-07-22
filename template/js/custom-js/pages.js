@@ -95,11 +95,11 @@ $('.apx_form').submit(function(e){
 $(document).ready(function(){
     apx.imageProportion();
     
-    ecomClient.modules({ url: '/apply_discount' })
-    .then(({ data }) => 
-        apx.setDiscount(data.result[0].response)   
-    )
-    .catch(console.error)
+    //ecomClient.modules({ url: '/apply_discount' })
+    //.then(({ data }) => 
+        //apx.setDiscount(data.result[0].response)   
+    //)
+    //.catch(console.error)
 
     if($('[data-look-id]').length){
         $('[data-look-id]').each(function(){

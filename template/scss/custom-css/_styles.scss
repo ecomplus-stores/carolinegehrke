@@ -125,7 +125,8 @@ body{font-family:Montserrat;}
 .apx_newsletter{padding: 4rem 0 5rem 0;}
 .apx_newsletter .footer__social{}
 .apx_newsletter .footer__social a{opacity:1;font-size:26px;margin-right:1.5em}
-.apx_newsletter .footer__social a i{opacity:1;font-size:26px;}
+.apx_newsletter .footer__social a i{opacity:1;font-size:26px;transition:all .2s}
+.apx_newsletter .footer__social a:hover i{color:#bc755c}
 
 .apx_newsletter p{font-size:14px;font-weight:400;max-width:200px;}
 .apx_newsletter form{}
@@ -147,7 +148,13 @@ body{font-family:Montserrat;}
     letter-spacing:1px;
     padding-left:2rem;
     padding-right:2rem;
+    transition:all .2s;
 }
+.shipping-calculator [type=submit],
+#product .product__buy span>button{transition:all .2s;border:0}
+#product .product__buy span>button:hover,
+.shipping-calculator [type=submit]:hover,
+.apx_newsletter form input[type="submit"]:hover{background:#bc755c;}
 .justify-content-between{justify-content: space-between;}
 .align-items-center{align-items:center;}
 @media (min-width: 1200px){
@@ -888,3 +895,47 @@ body:not(#page-home) #content .products-carousel{width:1260px;margin-left:auto;m
 }
 
 [data-cms-collection="pages"] .breadcrumb{display:none!important;}
+.header__nav>ul>li.dropdown .dropdown-menu{
+    background: #bc755c;
+    border: 0;
+    margin: 0 -15px;
+    padding: 30px 15px 15px 15px;
+    border-radius: 0;
+}
+.header__nav>ul>li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.header__nav>ul>li.dropdown .dropdown-menu a{
+    display:block;
+    margin-top:15px;
+    font-size:14px;
+}
+.header__nav>ul>li.dropdown .dropdown-menu a:hover{text-decoration:underline;}
+
+button{background-image:unset!important;}
+
+@media(max-width:990px){
+    .search-engine__count{font-size:12px}
+    .search-engine__toggles *{font-size:12px;}
+    .page-title__short-description.lead{font-size:14px;}
+    .breadcrumb{margin-bottom:1rem;}
+    .search-engine__results.fade{margin:0 -15px}
+    .search-engine__info > div > button{
+        font-size:12px;
+        vertical-align:middle;
+        margin:0 10px 10px 0
+    }
+
+    .header__nav .dropdown > a{pointer-events:none;}
+    .header__nav>ul>li.dropdown .dropdown-menu{
+        position: relative;
+    width: 100vw;
+    padding-top: 0;
+    background: #f7f7f7;
+    margin: 10px -14px 15px -14px;
+    left: 0;
+    top: 0;
+    }
+    .header__nav>ul>li.dropdown .dropdown-menu a{color:#212121}
+}
+

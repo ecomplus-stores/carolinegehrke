@@ -12,11 +12,10 @@
   },
   "categories_list": {
     "featured": [
-      "/?A Lola",
-      "/atacado?Atacado",
+      "/pages/quem-somos?A Lola",
       "/produtos?Produtos",
-      "/?Coleções",
-      "/pages/fale-conosco?Contato"
+      "/pages/fale-conosco?Contato",
+      "/pages/atacado?Atacado"
     ],
     "random": 0,
     "full_width": false

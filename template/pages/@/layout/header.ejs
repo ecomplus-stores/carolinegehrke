@@ -180,7 +180,11 @@ if (header.categories_list) {
                 <li class="<%- categoryParents[slug] ? 'dropdown' : '' %>">
                   <a href="<%= slug %>" >
                     <%= ` ${name} ` %>
+                    <% if (categoryParents[slug]) { %>
+                      <i style="font-size:12px;" class="fa fa-chevron-down"></i>
+                    <% } %>
                   </a>
+                  
                   <% if (categoryParents[slug]) { %>
                     <ul class="dropdown-menu row mx-0">                    
                       <% categoryParents[slug].forEach(subcategory => { %>
