@@ -19,10 +19,11 @@
     },
     {
       "type": "collection-shelf",
-      "shuffle": true,
+      "shuffle": false,
       "limit": 8,
       "page": 1,
-      "title": "[small]consumo intencional[/small]peças que duram"
+      "title": "[small]consumo intencional[/small]peças que duram",
+      "sort": "news"
     },
     {
       "type": "custom-html",
