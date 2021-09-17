@@ -148,7 +148,7 @@ $('#mobile-search-btn').click(function(){
     $('#search-bar').toggleClass('apx_visible');
 })
 $('.header__search-input').keyup(function(){
-    $('body .search__input').val($(this).val()).[0].dispatchEvent(new Event('input'));
+   $('body .search__input').val($(this).val())[0].dispatchEvent(new Event('input'));
 });
 $('body').click(function(e){
     if($(e.target).closest('#header').length == 0 && $('.apx_visible').length == 1){
