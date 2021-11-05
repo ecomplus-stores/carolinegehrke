@@ -170,8 +170,41 @@
             </slot>
 
             
+            <div
+              v-if="isKit"
+              class="product__kit"
+            >
+            <label class="kit__title">Selecione os itens do kit</label>
+              <slot
+                name="kit"
+                v-bind="{ kitItems }"
+              >                
+                <quantity-selector
+                  v-if="kitItems.length"
+                  :items="kitItems"
+                  :min="body.min_quantity"
+                  :max="body.quantity"
+                  :slug="body.slug"
+                  :kit-product-id="body._id"
+                  :kit-name="name"
+                  :kit-price="fixedPrice"
+                >
+                  <template #buy-button-content>
+                    <slot name="buy-button-content"/>
+                  </template>
+                </quantity-selector>
+                
 
-            <template>
+                <span
+                  v-if="!kitItems.length"
+                  class="product__kit-loading spinner-border"
+                  role="status"
+                >
+                  <span class="sr-only">Loading...</span>
+                </span>
+              </slot>
+            </div>
+            <template v-else>
               <div class="product__buy">
                 <div class="apx_quantity_selector">
                   <button type="button"

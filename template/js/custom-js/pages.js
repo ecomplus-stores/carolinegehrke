@@ -1,3 +1,5 @@
+!function(a){a.fn.equalHeights=function(){var b=0,c=a(this);return c.each(function(){var c=a(this).innerHeight();c>b&&(b=c)}),c.css("height",b)},a("[data-equal]").each(function(){var b=a(this),c=b.data("equal");b.find(c).equalHeights()})}(jQuery);
+
 import Vue from 'vue'
 const ecomUtils = require('@ecomplus/utils')
 const search = new EcomSearch()
@@ -6,7 +8,7 @@ const atacado = [];
 
 var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
-        //console.log(mutation.target)
+        console.log(mutation.target)
         if (mutation.type == "attributes") {
             if($(mutation.target).data('price__base')){
                 apx.updateDiscount(mutation.target);
@@ -14,6 +16,21 @@ var observer = new MutationObserver(function(mutations) {
         }
     });
 });
+if($('#content #search-engine').length > 0){
+    let searchMain = document.querySelector('#content #search-engine');
+    var observerSearch = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+        if(mutation.type == "childList"){
+            setTimeout(apx.imageProportion(), 500);
+            
+        }
+            //console.log(mutation.type);
+        });
+    });
+    var config = { attributes: true, childList: true, characterData: true };
+    observerSearch.observe(searchMain, config);
+}
+//observer.disconnect();
 
 const apx = {
     imageProportion : function(){
@@ -21,6 +38,10 @@ const apx = {
         let h = w * apx_product_list.image_size;
         let root = document.documentElement;
         root.style.setProperty('--apx_product_list_height', h + "px");
+
+        console.log('eita')
+        $('.product-card__name').equalHeights();
+
     },
     pageType : function(){
         return storefront.context.resource
@@ -93,7 +114,8 @@ $('.apx_form').submit(function(e){
 });
 
 $(document).ready(function(){
-    apx.imageProportion();
+    // apx.imageProportion();
+    setTimeout(apx.imageProportion(), 500);
     
     //ecomClient.modules({ url: '/apply_discount' })
     //.then(({ data }) => 
@@ -115,10 +137,11 @@ $(document).ready(function(){
                 });
                 
                 search.setProductIds(items_id).fetch().then(result => {
+                    console.log(result)
                     $.each(result.hits.hits, function(k, v){
                         let product = v._source;
                         let mb = result.hits.hits.length - 1 != k ? 'mb-3' : '' 
-                        let r = $('<div class="row align-items-center '+ mb +'"></div>');
+                        let r = $('<a href="/'+ product.slug +'" class="row look-product-item align-items-center '+ mb +'"></a>');
                         let parcelas = 3;
                         r.append('<div class="col-5 pr-0 pr-md-3"><picture><img data-src="'+ product.pictures[0].zoom.url +'" alt="'+ product.name+'" class="lozad-delay fade" crossorigin="anonymous"/></picture></div>');
                         //r.append('<div class="col-7"><strong>'+ product.name +'</strong><span><strong>' + ecomUtils.formatMoney(product.price) + '</strong> ou <span> '+ parcelas +' de '+ecomUtils.formatMoney(product.price / parcelas)+'</span></span><small>'+ ecomUtils.formatMoney((product.price * atacado[0])) +' no <b>ATACADO</b></small></div>')
@@ -138,7 +161,7 @@ $(document).ready(function(){
 });
 
 $(window).resize(function(){
-    apx.imageProportion();
+    setTimeout(apx.imageProportion(), 500);
 });
 
 $('#mobile-search-btn').click(function(){

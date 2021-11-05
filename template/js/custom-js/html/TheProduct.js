@@ -170,6 +170,7 @@ import {
   
       strBuy () {
         return this.buyText || i18n(i19buy)
+        //return 'iha'
       },
   
       discount () {
