@@ -11,10 +11,12 @@
       "banners": [
         {
           "img": "/img/uploads/mini.png",
-          "mobile_img": ""
+          "mobile_img": "",
+          "link": "https://www.lola-b.com/bolsas"
         },
         {
-          "img": "/img/uploads/minidois.png"
+          "img": "/img/uploads/minidois.png",
+          "link": "https://www.lola-b.com/semijoias"
         }
       ]
     },
