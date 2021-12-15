@@ -20,7 +20,7 @@
     {
       "type": "collection-shelf",
       "shuffle": true,
-      "limit": "",
+      "limit": 8,
       "page": 1,
       "title": "[small]consumo intencional[/small]peças que duram",
       "sort": "news"
