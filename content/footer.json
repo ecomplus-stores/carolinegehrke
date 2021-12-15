@@ -33,7 +33,7 @@
     "bradesco": true,
     "santander": false,
     "mastercard": true,
-    "paypal": true,
+    "paypal": false,
     "citibank": false,
     "mais": false,
     "itau": true
