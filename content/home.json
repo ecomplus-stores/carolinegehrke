@@ -4,16 +4,17 @@
   "sections": [
     {
       "type": "responsive-banner",
-      "img": "/img/uploads/header.png"
+      "img": "/img/uploads/capa.png"
     },
     {
       "type": "banners-grid",
       "banners": [
         {
-          "img": "/img/uploads/mb01.png"
+          "img": "/img/uploads/mini.png",
+          "mobile_img": ""
         },
         {
-          "img": "/img/uploads/mb02.png"
+          "img": "/img/uploads/minidois.png"
         }
       ]
     },
