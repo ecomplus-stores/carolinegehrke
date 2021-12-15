@@ -1,9 +1,9 @@
 {
   "marketing_stripe": {
-    "text": "Frete grátis para compras acima de R$500",
+    "text": "Frete grátis e cashback de 10% para compras acima de R$500",
     "link": "",
-    "background": "#bc755c",
-    "color": "#ffffff"
+    "background": "#ffffff",
+    "color": "#bc755c"
   },
   "contacts_stripe": {
     "pages": [],
