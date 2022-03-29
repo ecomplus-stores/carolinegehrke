@@ -84,7 +84,7 @@ $('.apx_newsletter form').submit(function(e){
     })
 });
 
-$('.apx_form').submit(function(e){
+$('.apx_form:not(.avise-me)').submit(function(e){
     e.preventDefault();
     var mail = [];
     mail.form = $(this);
@@ -107,10 +107,37 @@ $('.apx_form').submit(function(e){
     .then(function(response){
         alert(response.data.msg)
         if(!response.data.error){
-            news.form.find('input[type="text"],input[type="email"],textarea,input[type="tel"]').val('')
+            mail.form.find('input[type="text"],input[type="email"],textarea,input[type="tel"]').val('')
         }
+    })    
+});
+
+$('body').on('click','.avise_me button',function(e){
+    //e.preventDefault();
+    var mail = [];
+    mail.form = $(this).closest('.avise_me');
+    mail.destination = mail.form.find('[name="destination]').val() != undefined ? mail.form.find('input[name="destination"]').val() : "contato@lola-b.com";
+    mail.replyTo = mail.form.find('input[name="email"]').val();
+    mail.subject = 'Avise-me - ' + mail.replyTo;
+    mail.body = "";
+
+    mail.form.find('input,textarea').each(function(){
+        mail.body = mail.body + $(this).closest('div').find('label').text() + ': ' + $(this).val() + '<br>';
+    });
+
+    axios.post('https://us-central1-marketingtools-ecomplus.cloudfunctions.net/app/alpix/apx_sendmail', {
+        storeId : storefront.settings.store_id,
+        destination : mail.destination,
+        subject : mail.subject,
+        content : mail.body,
+        reply_mail: mail.replyTo
     })
-    
+    .then(function(response){
+        alert(response.data.msg)
+        if(!response.data.error){
+            mail.form.find('input[type="text"],input[type="email"],textarea,input[type="tel"]').val('')
+        }
+    })    
 });
 
 $(document).ready(function(){

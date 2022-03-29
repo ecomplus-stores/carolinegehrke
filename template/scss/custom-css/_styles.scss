@@ -122,7 +122,7 @@ body .cart__btn-checkout.btn{
 .product-card:hover{padding:0;box-shadow:unset;}
 .product-card__pictures{margin-bottom:1rem;}
 .product-card__name{font-size:14px;height:auto;}
-.product-card .product-card__buy{display:none!important;}
+// .product-card .product-card__buy{display:none!important;}
 .prices__compare{margin-right:.2rem;color:#868686;letter-spacing:2px;font-size:12px;}
 .prices__value{display:inline-block;font-size:16px;letter-spacing:2px;}
 .product-card__offer-stamp{    
@@ -166,9 +166,10 @@ body .cart__btn-checkout.btn{
 .apx_newsletter .footer__social a{opacity:1;font-size:26px;margin-right:1.5em}
 .apx_newsletter .footer__social a i{opacity:1;font-size:26px;transition:all .2s}
 .apx_newsletter .footer__social a:hover i{color:#bc755c}
-
+.apx_newsletter .footer__social a:last-child{margin:0}
 .apx_newsletter p{font-size:14px;font-weight:400;max-width:200px;}
 .apx_newsletter form{}
+.apx_newsletter form input[type="tel"],
 .apx_newsletter form input[type="text"],
 .apx_newsletter form input[type="email"],
 .apx_newsletter form input[type="submit"]{
@@ -1049,3 +1050,99 @@ button{background-image:unset!important;}
     border-color: #bc755c;
 }
 
+.product-card__relative{
+    position:relative;
+    z-index:2;
+}
+.product-card__functions *{opacity:1}
+.product-item:hover .product-card__functions{opacity:1;pointer-events:all}
+.product-card__functions{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    z-index: 999;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    opacity:0;
+    pointer-events:none;
+    transition:all .3s
+}
+.product-card__functions svg{
+    height:40px;
+    width:22px;
+    display:block;
+    margin:0 auto
+}
+.product-card__functions > div button,
+.product-card__functions a{
+    text-align:center;
+    overflow:hidden;
+    height:42px;
+    background:#fff;
+    color:#BC755C;
+    width:150px;
+    border-radius:42px;
+    padding:0;
+    margin: 0 auto;
+    display:block;
+
+}
+.product-card__functions > div button span,
+.product-card__functions a span{
+    display:block;
+    font-weight:500;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:lowercase;
+    height:40px
+}
+.product-card__functions > div button:hover span,
+.product-card__functions a:hover span{}
+.product-card__functions > div button:hover svg,
+.product-card__functions a:hover svg{margin-top:-30px}
+
+.product-card__functions > div button *,
+.product-card__functions a *{transition:all .3s}
+
+.product-card--inactive .badge-warning{
+    background-color: #BC755C;
+    padding:.5rem;
+}
+.avise_me.apx_form{
+    box-shadow: 0px 0px 15px rgba(0,0,0,.1);
+    padding: 2rem;
+    border-radius: 10px;
+}
+.avise_me.apx_form strong{
+    display:block;
+    text-align:left;
+    font-size:20px
+}
+.avise_me.apx_form p{text-align: left;display: block;font-size:12px;margin:0}
+.avise_me.apx_form input{
+    min-height:unset;
+    font-size:12px
+}
+.avise_me.apx_form button{
+    min-height:unset;
+    width:100%;
+    display:block;
+    padding:.5rem;
+    font-size:14px
+}
+
+.apx_seemore{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    color: #000;
+    border: 1px solid #000;
+    padding: 0.5rem 2rem;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    font-weight: 500;
+}

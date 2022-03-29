@@ -30,8 +30,9 @@
     },
     {
       "type": "custom-html",
-      "html": "[alpix]look[/alpix]"
+      "html": "<a class='apx_seemore' href='/produtos'/>ver mais produtos</a>"
     },
+   
     {
       "type": "custom-html",
       "html": "[alpix]instafeed[/alpix]"

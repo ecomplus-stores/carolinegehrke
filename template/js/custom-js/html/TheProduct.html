@@ -81,9 +81,41 @@
             name="unavailable"
             v-if="!body.available"
           >
-            <p class="product__unavailable">
+            <!-- <p class="product__unavailable">
               {{ i19unavailable }}
-            </p>
+            </p> -->
+            <div class="avise_me apx_form">
+              <div class="row">
+                <div class="col-12">
+                  <div class="d-flex align-items-center justify-content-center" style="justify-content: center;"><strong>Ops!</strong>
+                  <p class="pl-3">Este produto encontra-se indisponível.<br>Deixe seus dados que avisaremos quando chegar.</p>
+                </div>
+                </div>
+              </div>
+              <div class="row px-2 mt-3">
+                <div class="col-12 col-md-4 my-2 px-1">
+                  <label for="">Nome</label>
+                  <input type="text" name="nome" required="">
+                </div>
+                <div class="col-12 col-md-4 my-2 px-1">
+                  <label for="">E-mail</label>
+                  <input type="email" name="email" required="">
+                </div>
+                <div class="col-12 col-md-4 my-2  px-1">
+                  <label for="">WhatsApp</label>
+                  <input type="tel" name="telefone" required="">
+                </div>
+                <div class="col-12 col-md-6 my-2 d-none">
+                  <label for="">Produto</label>
+                  <input type="hidden" :value="name" name="product">
+                </div>                
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <button type="button">Avise-me quando disponível</button>
+                </div>
+              </div>
+            </div>
           </slot>
 
           <slot
@@ -91,7 +123,7 @@
             v-else-if="!isInStock"
           >
             <p class="product__out-of-stock">
-              {{ i19outOfStock }}
+              {{ i19outOfStock }} 
             </p>
           </slot>
 

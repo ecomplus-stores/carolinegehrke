@@ -14,7 +14,7 @@
             </h4>              
             <% if (footer.links_1.list_pages) { %>
               <ul class="footer__links">
-                <% (_.cms('pages') || []).forEach(slug => { %>
+                <!-- <% (_.cms('pages') || []).forEach(slug => { %>
                   <% const { title } = _.cms(`pages/${slug}`) %>
                   <li>
                     <i class="fas fa-angle-right"></i>
@@ -22,7 +22,26 @@
                       <%= title %>
                     </a>
                   </li>
-                <% }) %>
+                <% }) %> -->
+                <li>
+                  <i class="fas fa-angle-right"></i>
+                  <a href="/pages/quem-somos">
+                    Quem Somos
+                  </a>
+                </li>
+                <li>
+                  <i class="fas fa-angle-right"></i>
+                  <a href="/pages/cuidados-e-materiais">
+                    Cuidados e Materiais
+                  </a>
+                </li>
+                
+                <li>
+                  <i class="fas fa-angle-right"></i>
+                  <a href="/pages/fale-conosco">
+                    Fale Conosco
+                  </a>
+                </li>
               </ul>
             <% } else { %>
               <ul class="footer__links">
@@ -44,7 +63,7 @@
               </h4>
               <% if (footer.links_2.list_categories) { %>
                 <ul class="footer__links">
-                  <% _.categories.forEach(({ name, slug, parent }) => { %>
+                  <!-- <% _.categories.forEach(({ name, slug, parent }) => { %>
                     <% if (!parent) { %>
                       <li>
                         <i class="fas fa-angle-right"></i>
@@ -53,7 +72,71 @@
                         </a>
                       </li>
                     <% } %>
-                  <% }) %>
+                  <% }) %> -->
+                  <li>
+                    <i class="fas fa-angle-right"></i>
+                    <a href="/produtos">
+                      Produtos
+                    </a>
+                  </li>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+              
+                
+                
+                <li>
+                  <i class="fas fa-angle-right"></i>
+                  <a href="/pages/compre-no-atacado">
+                    Compre no Atacado
+                  </a>
+                </li>
+                
+              
+                
+                
+              
+                
+                
+              
+                
+                
+                <li>
+                  <i class="fas fa-angle-right"></i>
+                  <a href="/pages/garantia-e-qualidade">
+                    Política de Garantia
+                  </a>
+                </li>
+                
+              
+                
+                
+              
+                
+                
+                <li>
+                  <i class="fas fa-angle-right"></i>
+                  <a href="/pages/trocas-e-devolucoes">
+                    Trocas e Devoluções
+                  </a>
+                </li>
                 </ul>
               <% } else { %>
                 <ul class="footer__links">
