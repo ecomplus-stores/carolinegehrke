@@ -140,7 +140,16 @@ $('body').on('click','.avise_me button',function(e){
     })    
 });
 
+
 $(document).ready(function(){
+    if(window.innerWidth < 990){
+        $('.header__nav .dropdown > a').click(function(e){
+            e.preventDefault();
+            $(this).closest('li').find('.dropdown-menu').toggle();
+            $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up');
+        })
+    }
+
     // apx.imageProportion();
     setTimeout(apx.imageProportion(), 500);
     

@@ -804,6 +804,7 @@ body:not(#page-home) #content .products-carousel{width:1260px;margin-left:auto;m
         font-size: 11px;
         letter-spacing: 0;
         padding: .5rem 0;
+        white-space: normal;
     }
     .logo_svg svg{
         height: 30px;
@@ -960,13 +961,16 @@ body:not(#page-home) #content .products-carousel{width:1260px;margin-left:auto;m
     padding: 30px 15px 15px 15px;
     border-radius: 0;
 }
+@media(min-width:990px){
 .header__nav>ul>li.dropdown:hover .dropdown-menu {
     display: block;
+}
 }
 .header__nav>ul>li.dropdown .dropdown-menu a{
     display:block;
     margin-top:15px;
     font-size:14px;
+    white-space: nowrap;
 }
 .header__nav>ul>li.dropdown .dropdown-menu a:hover{text-decoration:underline;}
 
@@ -984,15 +988,16 @@ button{background-image:unset!important;}
         margin:0 10px 10px 0
     }
 
-    .header__nav .dropdown > a{pointer-events:none;}
+    // .header__nav .dropdown > a{pointer-events:none;}
     .header__nav>ul>li.dropdown .dropdown-menu{
         position: relative;
-    width: 100vw;
-    padding-top: 0;
-    background: #f7f7f7;
-    margin: 10px -14px 15px -14px;
-    left: 0;
-    top: 0;
+        width: 100vw;
+        padding-top: 0;
+        background: #f7f7f7;
+        left: 0;
+        top: 0;
+        margin: 10px -16px;
+        border: 0;
     }
     .header__nav>ul>li.dropdown .dropdown-menu a{color:#212121}
 
@@ -1146,3 +1151,31 @@ button{background-image:unset!important;}
     border-radius: 30px;
     font-weight: 500;
 }
+
+#product-gallery picture{opacity:1}
+#page-products .gallery .pswp img, #page-products .gallery  .pswp picture{max-height:unset!important}
+
+@media(min-width:990px){
+    .products-carousel .product-item{
+        padding:0 15px 25px 15px!important;
+    }
+    .products-carousel,
+    .products-carousel *{box-sizing:border-box}
+    .products-carousel .glide__track{padding:0}
+}
+.gallery .glide{padding-bottom:50px;margin-bottom:50px;}
+.gallery .glide__bullets{bottom:0}
+.gallery .glide__bullet{
+    width:75px;
+    height:6px;
+    border-radius:0;
+    border:0;
+    background:#F2F2F2
+}
+
+.gallery .glide__bullet.glide__bullet--active{
+    background:#000
+}
+
+.gallery .glide{padding-bottom:0}
+.gallery .glide__bullets{bottom:30px}

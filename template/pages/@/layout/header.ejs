@@ -206,17 +206,17 @@ const hasMegamenu = header.desktop_megamenu
           <nav class="header__nav<%= isCategoriesNavFull ? ' header__nav--full' : '' %>">
             <ul class="list-inline list-unstyled">
               <% categories.forEach(({ slug, name, _id }) => { %>
-                <li class="<%- categoryParents[slug] ? 'dropdown' : '' %>">
+                <li class="<%- categoryParents[slug.replace('/','')] ? 'dropdown' : '' %>">
                   <a href="<%= slug %>" >
                     <%= ` ${name} ` %>
-                    <% if (categoryParents[slug]) { %>
+                    <% if (categoryParents[slug.replace('/','')]) { %>
                       <i style="font-size:12px;" class="fa fa-chevron-down"></i>
                     <% } %>
                   </a>
                   
-                  <% if (categoryParents[slug]) { %>
+                  <% if (categoryParents[slug.replace('/','')]) { %>
                     <ul class="dropdown-menu row mx-0">                    
-                      <% categoryParents[slug].forEach(subcategory => { %>
+                      <% categoryParents[slug.replace('/','')].forEach(subcategory => { %>
                         <li>
                           <a href="/<%= subcategory.slug %>">
                             <%= subcategory.name %>
