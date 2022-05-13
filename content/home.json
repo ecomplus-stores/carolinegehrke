@@ -30,7 +30,7 @@
     },
     {
       "type": "custom-html",
-      "html": "<a class='apx_seemore' href='/produtos'/>ver mais produtos</a>"
+      "html": "<a class='apx_seemore' href='/produtos'>ver mais produtos</a>"
     },
    
     {
