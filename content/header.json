@@ -12,9 +12,9 @@
   },
   "categories_list": {
     "featured": [
-      "./pages/quem-somos?A Lola",
-      "./produtos?Produtos",
-      "./pages/fale-conosco?Contato",
+      "/couro?Bolsas em Couro Legítimo",
+      "/sintetico?Bolsas Sintético Premium",
+      "/mochila?Mochila em Couro Legítimo",
       "./pages/atacado?Atacado"
     ],
     "random": 0,
