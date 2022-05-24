@@ -6,16 +6,15 @@
     "color": "#bc755c"
   },
   "contacts_stripe": {
-    "pages": [],
+    "pages": [
+      {}
+    ],
     "phone_wpp": false,
     "socials": false
   },
   "categories_list": {
     "featured": [
-      "/couro?Bolsas em Couro Legítimo",
-      "/sintetico?Bolsas Sintético Premium",
-      "/mochila?Mochilas em Couro Legítimo",
-      "/carteiras?Carteiras em Couro Legítimo"
+      "/produtos?Produtos"
     ],
     "random": 0,
     "full_width": false
